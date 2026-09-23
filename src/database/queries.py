@@ -1,7 +1,8 @@
 import sqlite3
 
 def random_media():
-    cursor = sqlite3.connect("data/quiz.db").cursor()
+    connection = sqlite3.connect("data/quiz.db")
+    cursor = connection.cursor()
 
     cursor.execute("""
                    SELECT *
