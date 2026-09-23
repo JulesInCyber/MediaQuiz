@@ -1,3 +1,7 @@
+## Starting
+
+from `/MediaQuiz` run `python -m src.game.main`
+
 ## Database Scheme
 
 ### Table `media`
