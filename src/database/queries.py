@@ -1,21 +1,19 @@
+import random
 import sqlite3
 
 test_db = "testing/test.db"
 live_db = "data/quiz.db"
 
-def random_media():
+def get_random_media():
     connection = sqlite3.connect(test_db)
+    with open ("SQL/RandomMedia.sql", "r") as file:
+        sql_script = file.read()
+
     cursor = connection.cursor()
-
-    cursor.execute("""
-                   SELECT *
-                   FROM media
-                   ORDER BY random()
-                   LIMIT 1;
-                   """)
-
-    media = cursor.fetchone()
+    cursor.execute(sql_script)
+    connection.commit()
+    random_media = cursor.fetchone()
     connection.close()
 
-    return media 
-
+    return random_media
+    
