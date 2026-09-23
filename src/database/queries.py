@@ -1,7 +1,10 @@
 import sqlite3
 
+test_db = "testing/test.db"
+live_db = "data/quiz.db"
+
 def random_media():
-    connection = sqlite3.connect("data/quiz.db")
+    connection = sqlite3.connect(test_db)
     cursor = connection.cursor()
 
     cursor.execute("""

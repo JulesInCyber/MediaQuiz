@@ -5,5 +5,8 @@ VALUES
     ('Laurence Fishburne'),
     ('Hugo Weaving'),
     ('Lana Wachowski'),
-    ('Lilly Wachowski')
+    ('Lilly Wachowski'),
+    ('Frank Darabont'),
+    ('Tim Robbins'),
+    ('Morgan Freeman')
 ON CONFLICT (name) DO NOTHING;
