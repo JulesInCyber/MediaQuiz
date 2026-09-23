@@ -1,11 +1,10 @@
 import sqlite3
 
 def random_media():
-    connection = sqlite3.connect("data/quiz.db")
-    cursor = connection.cursor()
+    cursor = sqlite3.connect("data/quiz.db").cursor()
 
     cursor.execute("""
-                   SELECT title
+                   SELECT *
                    FROM media
                    ORDER BY random()
                    LIMIT 1;
@@ -16,6 +15,3 @@ def random_media():
 
     return media 
 
-random_media = random_media()
-
-print(random_media[0])
