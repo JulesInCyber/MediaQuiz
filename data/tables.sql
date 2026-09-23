@@ -8,7 +8,7 @@ CREATE TABLE media (
 
 CREATE TABLE people (
     id INTEGER PRIMARY KEY,
-    name TEXT NOT NULL
+    name TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE genres (
