@@ -1,22 +1,22 @@
 -- Creating tables
-CREATE TABLE media (
+CREATE TABLE IF NOT EXISTS media (
     id INTEGER PRIMARY KEY,
     title TEXT NOT NULL,
     release_year INTEGER,
     type TEXT NOT NULL
 );
 
-CREATE TABLE people (
+CREATE TABLE IF NOT EXISTS people (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL
 );
 
-CREATE TABLE genres (
+CREATE TABLE IF NOT EXISTS genres (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE
 );
 
-CREATE TABLE media_people (
+CREATE TABLE IF NOT EXISTS media_people (
     media_id INTEGER NOT NULL,
     person_id INTEGER NOT NULL,
     role TEXT NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE media_people (
     FOREIGN KEY (person_id) REFERENCES people(id)
 );
 
-CREATE TABLE media_genres (
+CREATE TABLE IF NOT EXISTS media_genres (
     media_id INTEGER NOT NULL,
     genre_id INTEGER NOT NULL,
 
@@ -37,7 +37,7 @@ CREATE TABLE media_genres (
     FOREIGN KEY (genre_id) REFERENCES genres(id)
 );
 
-CREATE TABLE quotes (
+CREATE TABLE IF NOT EXISTS quotes (
     id INTEGER PRIMARY KEY,
     media_id INTEGER NOT NULL,
     quote TEXT NOT NULL,
