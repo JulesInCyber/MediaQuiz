@@ -1,7 +1,7 @@
 -- Creating tables
 CREATE TABLE media (
     id INTEGER PRIMARY KEY,
-    title TEXT NOT NULL,
+    title TEXT NOT NULL UNIQUE,
     release_year INTEGER,
     type TEXT NOT NULL
 );
