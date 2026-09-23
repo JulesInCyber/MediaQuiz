@@ -11,7 +11,7 @@ def random_media():
                    LIMIT 1;
                    """)
 
-    media = cursor.fetchall()
+    media = cursor.fetchone()
     connection.close()
 
     return media 
