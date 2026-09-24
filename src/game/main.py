@@ -6,6 +6,7 @@ def main():
     
     actors = get_media_actors(media_title)
     directors = get_media_director(media_title)
+    genres = get_media_genres(media_title)
 
     # Printing Type and Release
     print(f"The {media_type} was released in {media_release}")    
@@ -19,6 +20,10 @@ def main():
     print("\nDirected by:")
     for director in directors:
         print(director)
+
+    print("\nGenres: ")
+    for genre in genres:
+        print(genre)
 
 if __name__ == "__main__":
     main()
