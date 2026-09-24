@@ -8,7 +8,6 @@ def connect_db():
     connection = sqlite3.connect(test_db)
     return connection
 
-
 def get_random_media():
     connection = connect_db()
     with open ("SQL/RandomMedia.sql", "r") as file:
