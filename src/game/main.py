@@ -1,4 +1,4 @@
-from src.database.queries import *
+from src.res.queries import *
 
 def main():
     media = get_random_media()
