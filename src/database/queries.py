@@ -35,7 +35,7 @@ def get_media_actors(media):
 
 def get_media_director(media):
     connection = connect_db()
-    with open ("SQL/MediaDirector.sql", "r") as file:
+    with open ("SQL/MediaDirector.sql") as file:
         query = file.read()
 
     cursor = connection.cursor()
@@ -47,7 +47,7 @@ def get_media_director(media):
 
 def get_media_genres(media):
     connection = connect_db()
-    with open ("SQL/MediaGenres.sql", "r") as file:
+    with open ("SQL/MediaGenres.sql") as file:
         query = file.read()
 
     cursor = connection.cursor()
