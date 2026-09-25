@@ -15,7 +15,6 @@ def get_random_media():
 
     cursor = connection.cursor()
     cursor.execute(query)
-    connection.commit()
     random_media = cursor.fetchone()
     connection.close()
 
