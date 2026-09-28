@@ -1,4 +1,4 @@
-from queries import *
+from src.res.queries import *
 
 def normalize_answer(answer):
     normalized = answer.strip().casefold()
