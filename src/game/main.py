@@ -1,5 +1,6 @@
 from src.res.queries import *
 from src.res.loop import *
+from src.res.menu import *
 
 def main():
     media = get_random_media()
