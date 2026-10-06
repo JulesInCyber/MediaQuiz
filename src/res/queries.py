@@ -55,3 +55,16 @@ def get_media_genres(media):
     connection.close()
 
     return [genre[0] for genre in genres]
+
+def get_media_franchise(title):
+    connection = connect_db()
+    with open ("SQL/MediaFranchise.sql") as file:
+        query = file.read()
+
+    cursor = connection.cursor()
+    cursor.execute(query, (title.strip(),))
+    franchise = cursor.fetchone()
+    connection.close()
+
+    # None if the title is not in the database or has no franchise
+    return franchise[0] if franchise else None

@@ -3,7 +3,8 @@ CREATE TABLE media (
     id INTEGER PRIMARY KEY,
     title TEXT NOT NULL UNIQUE,
     release_year INTEGER,
-    type TEXT NOT NULL
+    type TEXT NOT NULL,
+    franchise TEXT
 );
 
 CREATE TABLE people (

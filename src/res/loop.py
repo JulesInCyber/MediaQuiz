@@ -35,9 +35,16 @@ def get_franchise(title):
 
     return " ".join(words)
 
-def check_franchise(answer, title):
+def check_franchise(answer, title, franchise):
     if check_answer(answer, title):
         return False
+
+    # Use the franchise from the database, fall back to the title
+    media_franchise = normalize_answer(franchise or get_franchise(title))
+    guess_franchise = normalize_answer(get_media_franchise(answer) or get_franchise(answer))
+
+    if guess_franchise == media_franchise:
+        return True
 
     return get_franchise(answer) == get_franchise(title)
 

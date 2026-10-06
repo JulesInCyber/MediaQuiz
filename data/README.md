@@ -10,11 +10,14 @@ Every media is listet with basic information.
 
 **Example**
 
-id | title          | release_year | type
----|----------------|--------------|-------
-1  | The Matrix     | 1999         | movie
-2  | Inception      | 2010         | movie
-3  | The Witcher 3  | 2015         | game
+id | title          | release_year | type  | franchise
+---|----------------|--------------|-------|------------
+1  | The Matrix     | 1999         | movie | The Matrix
+2  | Inception      | 2010         | movie | NULL
+3  | The Witcher 3  | 2015         | game  | The Witcher
+
+`franchise` groups sequels and prequels (e.g. "Toy Story" and "Toy Story 2" both have the franchise `Toy Story`).
+It is `NULL` for media that are not part of a franchise.
 
 ### Table `people`
 This table lists every person that plays a role in any medium.

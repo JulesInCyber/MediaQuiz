@@ -6,6 +6,7 @@ def play_round():
     media = get_random_media()
     media_title = media[1]
     media_type = media[3]
+    media_franchise = media[4]
 
     all_clues = get_clues(media)
     points = 0
@@ -21,7 +22,7 @@ def play_round():
             points = len(all_clues) - i
             print("\nCorrect!")
             break
-        elif check_franchise(user_answer, media_title):
+        elif check_franchise(user_answer, media_title, media_franchise):
             print("Correct Franchise -- Wrong Movie\n")
 
     print(f"The secret {media_type} was: {media_title}")
