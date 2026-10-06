@@ -5,6 +5,15 @@ VALUES
     ('Drama'),
     ('Romance'),
     ('Comedy'),
-    ('Tragedy')
+    ('Tragedy'),
+    ('Thriller'),
+    ('Crime'),
+    ('Adventure'),
+    ('History'),
+    ('War'),
+    ('Horror'),
+    ('Animation'),
+    ('Family'),
+    ('Western')
 ON CONFLICT (name)
 DO NOTHING;
