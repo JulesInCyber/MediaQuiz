@@ -15,9 +15,7 @@ def check_answer(answer, title):
 
     return result
 
-def get_clues():
-    media = get_random_media()
-
+def get_clues(media):
     media_id = media[0]
     media_title = media[1]
     media_release = media[2]
