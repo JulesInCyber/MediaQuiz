@@ -2,3 +2,4 @@ __pycache__/
 testing/*
 data/quiz.db
 *.bak
+data/movies_genres.md

@@ -7,6 +7,7 @@ def play_round():
     media_title = media[1]
     media_type = media[3]
     media_franchise = media[4]
+    media_number = media[5]
 
     all_clues = get_clues(media)
     points = 0
@@ -16,13 +17,13 @@ def play_round():
         user_input = input("Make a Guess: ")
         user_answer = normalize_answer(user_input)
 
-        result = check_answer(user_answer, media_title)
+        result = check_answer(user_answer, media_title, media_franchise, media_number)
         if result == True:
             # Fewer hints used means more points
             points = len(all_clues) - i
             print("\nCorrect!")
             break
-        elif check_franchise(user_answer, media_title, media_franchise):
+        elif check_franchise(user_answer, media_title, media_franchise, media_number):
             print("Correct Franchise -- Wrong Movie\n")
 
     print(f"The secret {media_type} was: {media_title}")

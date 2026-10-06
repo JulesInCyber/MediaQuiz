@@ -4,7 +4,8 @@ CREATE TABLE media (
     title TEXT NOT NULL UNIQUE,
     release_year INTEGER,
     type TEXT NOT NULL,
-    franchise TEXT
+    franchise TEXT,
+    franchise_number INTEGER
 );
 
 CREATE TABLE people (
@@ -31,6 +32,7 @@ CREATE TABLE media_people (
 CREATE TABLE media_genres (
     media_id INTEGER NOT NULL,
     genre_id INTEGER NOT NULL,
+    position INTEGER NOT NULL,
 
     PRIMARY KEY (media_id, genre_id),
 

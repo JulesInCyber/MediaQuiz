@@ -5,3 +5,4 @@ JOIN media_genres
 JOIN media
     ON media.id = media_genres.media_id
 WHERE media.id = ?
+ORDER BY media_genres.position;

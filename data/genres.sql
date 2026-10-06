@@ -1,19 +1,21 @@
 INSERT INTO genres (name)
 VALUES
     ('Action'),
-    ('Science Fiction'),
-    ('Drama'),
-    ('Romance'),
-    ('Comedy'),
-    ('Tragedy'),
-    ('Thriller'),
-    ('Crime'),
     ('Adventure'),
-    ('History'),
-    ('War'),
-    ('Horror'),
     ('Animation'),
-    ('Family'),
+    ('Biography'),
+    ('Comedy'),
+    ('Crime'),
+    ('Drama'),
+    ('Fantasy'),
+    ('History'),
+    ('Horror'),
+    ('Music'),
+    ('Mystery'),
+    ('Romance'),
+    ('Science Fiction'),
+    ('Thriller'),
+    ('War'),
     ('Western')
 ON CONFLICT (name)
 DO NOTHING;
