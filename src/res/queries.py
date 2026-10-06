@@ -5,7 +5,7 @@ live_db = "data/quiz.db"
 
 def connect_db():
     # Change Database after Testing
-    connection = sqlite3.connect(test_db)
+    connection = sqlite3.connect(live_db)
     return connection
 
 def get_random_media():
