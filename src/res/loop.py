@@ -15,6 +15,32 @@ def check_answer(answer, title):
 
     return result
 
+SEQUEL_MARKERS = {
+    "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x",
+    "part", "chapter", "episode",
+}
+
+def get_franchise(title):
+    # "Toy Story 2" -> "toy story", "Star Wars: A New Hope" -> "star wars"
+    normalized = normalize_answer(title)
+    base = normalized.split(":")[0].split(" - ")[0]
+    words = base.split()
+
+    while words and (words[-1].isdigit() or words[-1] in SEQUEL_MARKERS):
+        words.pop()
+
+    # Titles that are only a number (e.g. "1917") have no franchise part
+    if not words:
+        return normalized
+
+    return " ".join(words)
+
+def check_franchise(answer, title):
+    if check_answer(answer, title):
+        return False
+
+    return get_franchise(answer) == get_franchise(title)
+
 def get_clues(media):
     # media = get_random_media()
 
