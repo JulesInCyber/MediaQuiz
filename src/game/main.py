@@ -4,16 +4,10 @@ from src.res.menu import *
 
 def main():
     media = get_random_media()
-    media_id = media[0]
     media_title = media[1]
-    media_release = media[2]
     media_type = media[3]
     
-    actors = get_media_actors(media_id)
-    directors = get_media_director(media_id)
-    genres = get_media_genres(media_id)
-
-    all_clues = get_clues()
+    all_clues = get_clues(media)
 
     for i, clue in enumerate(all_clues):
         print(f"Hint {i+1}: {clue}")
